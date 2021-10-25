@@ -41,7 +41,7 @@ class MainKtTest {
             amountPreviousTransfers = 9000,
             transferAmountNow = 7600000
         )
-        assertEquals(0, resultVkPay)
+        assertEquals(1, resultVkPay)
     }
 
     @Test
@@ -59,7 +59,7 @@ class MainKtTest {
         val result = comissionVisaAndMir(
             3300
         )
-        assertEquals(3500, result)
+        assertEquals(35001, result)
     }
 
     @Test
