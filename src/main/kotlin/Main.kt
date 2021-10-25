@@ -10,7 +10,7 @@ fun main() {
     calculateComission(VISA, transferAmountNow = 7_600_000)
 }
 
-fun calculateComission(cardType: String, amountPreviousTransfers: Int = 0, transferAmountNow: Int) {
+fun calculateComission(cardType: String, amountPreviousTransfers: Int = 0, transferAmountNow: Int): Int {
     val result = when (cardType) {
         MASTER_CARD -> comissionMasterCardAndMaestro(amountPreviousTransfers, transferAmountNow)
         MAESTRO -> comissionMasterCardAndMaestro(amountPreviousTransfers, transferAmountNow)
@@ -18,7 +18,7 @@ fun calculateComission(cardType: String, amountPreviousTransfers: Int = 0, trans
         MIR -> comissionVisaAndMir(transferAmountNow)
         else -> 0
     }
-    return println("Комиссия составит $result копеек")
+    return result
 }
 
 fun comissionMasterCardAndMaestro(amountPreviousTransfers: Int, transferAmountNow: Int): Int {
